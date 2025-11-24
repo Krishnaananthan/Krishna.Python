@@ -1,42 +1,37 @@
-# Simple Python Calculator
+# src/main.py
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Cannot divide by zero!"
+    return a / b
+
 def calculator():
-    print("=== Simple Python Calculator ===")
-    print("Operations: +, -, *, /, ** (power), % (modulus)")
-    print("Type 'quit' to exit\n")
+    print("Simple Python Calculator")
+    print("Operations: +  -  *  /")
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    op = input("Enter operation (+, -, *, /): ")
 
-    previous = 0
-    run = True
+    if op == "+":
+        print(add(a, b))
+    elif op == "-":
+        print(subtract(a, b))
+    elif op == "*":
+        print(multiply(a, b))
+    elif op == "/":
+        print(divide(a, b))
+    else:
+        print("Invalid operation!")
 
-    def perform_calc():
-        nonlocal previous
-        if previous == 0:
-            equation = input("Enter equation: ")
-        else:
-            equation = input(f"{previous} ")
-
-        if equation == 'quit':
-            return False
-
-        # Replace ^ with ** for power
-        equation = equation.replace('^', '**')
-
-        try:
-            result = eval(equation)
-            print("Result:", result)
-            previous = result
-        except ZeroDivisionError:
-            print("Error: Division by zero!")
-            previous = 0
-        except Exception as e:
-            print(f"Error: Invalid input! ({e})")
-            previous = 0
-
-        return True
-
-    while run:
-        run = perform_calc()
-        print("-" * 40)
-
-# Run the calculator
+# Only run interactive code when executed directly
 if __name__ == "__main__":
     calculator()
