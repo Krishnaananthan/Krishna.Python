@@ -40,11 +40,4 @@ jobs:
       # Step 5: SonarQube Scan
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
-        with:
-          args: >
-            -Dsonar.projectKey=Krishnaananthan_Krishna.Python
-            -Dsonar.organization=krishnaananthan
-            -Dsonar.sources=src
-            -Dsonar.python.coverage.reportPaths=coverage.xml
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
