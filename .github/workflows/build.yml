@@ -17,7 +17,7 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@fd88b7d7ccbaefd23d8f36f73b59db7a3d246602
         with:
           args:  >
-            -Dsonar.projctKey=Krishnaananthan_Krishna.Python
+            -Dsonar.projectKey=Krishnaananthan_Krishna.Python
             -Dsonar.organization=Krishnaananthan
             -Dsonar.sources=.
         env:
